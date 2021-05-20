@@ -54,5 +54,8 @@
     "*.{js,json,yml,yaml,css,scss,ts,tsx,md}": [
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "npx": "^10.2.2"
   }
 }
