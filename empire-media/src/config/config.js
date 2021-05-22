@@ -12,7 +12,7 @@ export const PERIOD = {
     'Minute' : 1,
     'Five_Minutes' : 5,
     'One_Hour' : 1,
-    'One_Week' : 1
+    'One_Week' : 168
 };
 
 export const PRECISION = {

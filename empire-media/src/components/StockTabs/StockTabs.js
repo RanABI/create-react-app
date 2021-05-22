@@ -9,14 +9,13 @@ export default function StockTabs({props}) {
     
     const { setPeriod, setPrecision} = props;
     
-    const handleClick = (period, precision) => {
-    
+    const handleClick = (period, precision) => {    
         setPeriod(period);
         setPrecision(precision);
     }
 
     return (<StockTabsStyled>
-        <Tabs defaultIndex={3}>
+        <Tabs defaultIndex={0}>
             <TabList>
                 <Tab onClick={() => handleClick(config.PERIOD.Minute, config.PRECISION.Minutes)}>1M</Tab>
                 <Tab onClick={() => handleClick(config.PERIOD.Five_Minutes, config.PRECISION.Minutes)}>5M</Tab>

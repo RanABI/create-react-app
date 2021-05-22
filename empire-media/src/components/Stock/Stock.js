@@ -7,8 +7,8 @@ import * as config from '../../config/config'
 
 export default function Stock(stockType) {
     const [stockData, setStockData] = useState([]);
-    const [precision, setPrecision] = useState(config.PRECISION.Hours);
-    const [period, setPeriod] = useState(config.PERIOD.One_Week);
+    const [precision, setPrecision] = useState(config.PRECISION.Minutes);
+    const [period, setPeriod] = useState(config.PERIOD.Minute);
     
     const onFailure = (_) => {
         setStockData([]);
