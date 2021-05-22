@@ -7,8 +7,8 @@ import * as config from '../../config/config'
 export default function Stock(stockType) {
 
     const [stockData,setStockData] = useState([]);
-    const [precision, setPrecision] = useState(config.PRECISION.Minutes);
-    const [period, setPeriod] = useState(config.PERIODS.Minute);
+    const [precision, setPrecision] = useState(config.PRECISION.Hours);
+    const [period, setPeriod] = useState(config.PERIODS.One_Week);
     
     const onFailure = (error) => {
         console.log('error',error);
@@ -21,12 +21,13 @@ export default function Stock(stockType) {
             onSuccess: setStockData,
             onFailure: onFailure
         } );
-    }, [period,precision]);
-    console.log('stockData',stockData)
+    }, [period,precision,stockType]);
+
+    const data = {stockData, period, precision };
     return ( 
         <StockStyled>
-            <StockTabs props= {{setPeriod, setPrecision}}/>
-            <StockChart stockData={stockData}/>
+            <StockTabs props={{setPeriod, setPrecision}}/>
+            <StockChart props={data}/>
         </StockStyled>        
     );
 }

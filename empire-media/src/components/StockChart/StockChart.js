@@ -1,13 +1,14 @@
 import React from 'react';
 import StockChartStyled from './StockChartStyled';
+import CandleStickStockScaleChartWithVolumeBarV3 from './CandleStickStockScaleChartWithVolumeBarV3';
+import {convertData} from '../../helpers/stockDataHelper'
 
-export default function StockChart({stockData}){
-    console.log('stockData',stockData);
-
+export default function StockChart({props}){
+    const {stockData, period, precision} = props;
+    console.log(stockData)
     return (<StockChartStyled>
-        { stockData && stockData.map((data) => {
-            console.log("---",data)
-        })}
-            
+        {stockData && stockData.length > 0 &&  
+            <CandleStickStockScaleChartWithVolumeBarV3 type={'svg'} data={convertData(stockData,period, precision)} />
+        }
     </StockChartStyled>);
 }

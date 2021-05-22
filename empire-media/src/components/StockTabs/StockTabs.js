@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import * as config from '../../config/config'
 import StockTabsStyled from './StockTabsStyled';
@@ -15,7 +15,7 @@ export default function StockTabs({props}) {
     }
 
     return (<StockTabsStyled>
-        <Tabs>
+        <Tabs defaultIndex={3}>
             <TabList>
                 <Tab onClick={() => handleClick(config.PERIODS.Minute, config.PRECISION.Minutes)}>1M</Tab>
                 <Tab onClick={() => handleClick(config.PERIODS.Five_Minutes, config.PRECISION.Minutes)}>5M</Tab>
