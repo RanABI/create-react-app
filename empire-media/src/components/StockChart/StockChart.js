@@ -1,6 +1,6 @@
 import React from 'react';
 import StockChartStyled from './StockChartStyled';
-import CandleStickStockScaleChartWithVolumeBarV3 from './CandleStickStockScaleChartWithVolumeBarV3';
+import CandleStickStockScaleChartWithVolumeBarV3 from '../Charts/CandleStickStockScaleChartWithVolumeBarV3';
 import {convertData} from '../../helpers/stockDataHelper'
 
 export default function StockChart({props}){
