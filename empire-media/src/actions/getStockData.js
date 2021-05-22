@@ -5,10 +5,10 @@ export default function getStockData (data) {
 
     const {stockType, precision, period, onSuccess, onFailure,} = data;
     const url = getUrl(stockType.stockType, period, precision);
-
-    const response = fetch(url,{ headers })
+    
+    fetch(url,{ headers })
         .then(response => response.json())
-        .then(data => {console.log('fetched');onSuccess(data);})
+        .then(data => onSuccess(data))
         .catch((error) => onFailure(error));
 
 }

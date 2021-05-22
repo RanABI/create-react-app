@@ -1,18 +1,19 @@
 import * as config from '../config/config'
 
-export const convertData = (data, period, precision) => {
+export const convertData = (data, precision) => {
     var keys = ["date","open","close","high","low","volume"],
         i = 0, k = 0,
         obj = null,
         output = [];
     for (i = 0; i < data.length; i++) {
         obj = {};
-        if(period === config.PERIODS.One_Week)
+        obj[keys[0]] = new Date(data[i].StartDate); 
+        if(precision === config.PRECISION.Hours )
         {
-            obj[keys[0]] = new Date(data[i].StartDate); 
+            obj[keys[0]] = new Date(data[i].StartDate);
         }
         else{
-            obj[keys[0]] = new Date(data[i].StartTime);
+            obj[keys[0]] = new Date(data[i].Date);
         }
 
         for (k = 1; k < keys.length; k++) {

@@ -10,6 +10,7 @@ export default function StockTabs({props}) {
     const { setPeriod, setPrecision} = props;
     
     const handleClick = (period, precision) => {
+    
         setPeriod(period);
         setPrecision(precision);
     }

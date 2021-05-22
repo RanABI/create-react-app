@@ -6,7 +6,7 @@ import StockTabs from '../StockTabs/StockTabs';
 import * as config from '../../config/config'
 export default function Stock(stockType) {
 
-    const [stockData,setStockData] = useState([]);
+    const [stockData, setStockData] = useState([]);
     const [precision, setPrecision] = useState(config.PRECISION.Hours);
     const [period, setPeriod] = useState(config.PERIODS.One_Week);
     
@@ -23,7 +23,7 @@ export default function Stock(stockType) {
         } );
     }, [period,precision,stockType]);
 
-    const data = {stockData, period, precision };
+    const data = {stockData, precision };
     return ( 
         <StockStyled>
             <StockTabs props={{setPeriod, setPrecision}}/>

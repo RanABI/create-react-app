@@ -4,11 +4,11 @@ import CandleStickStockScaleChartWithVolumeBarV3 from './CandleStickStockScaleCh
 import {convertData} from '../../helpers/stockDataHelper'
 
 export default function StockChart({props}){
-    const {stockData, period, precision} = props;
-    console.log(stockData)
+    const {stockData, precision} = props;
+    
     return (<StockChartStyled>
         {stockData && stockData.length > 0 &&  
-            <CandleStickStockScaleChartWithVolumeBarV3 type={'svg'} data={convertData(stockData,period, precision)} />
+            <CandleStickStockScaleChartWithVolumeBarV3 type={'svg'} data={convertData(stockData, precision)} />
         }
     </StockChartStyled>);
 }
