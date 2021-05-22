@@ -8,7 +8,7 @@ export const STOCK_TYPE = {
     'Apple' : 1
 };
 
-export const PERIODS = {
+export const PERIOD = {
     'Minute' : 1,
     'Five_Minutes' : 5,
     'One_Hour' : 1,
@@ -18,4 +18,8 @@ export const PERIODS = {
 export const PRECISION = {
     'Minutes' : 'Minutes',
     'Hours' : 'Hours'
+}
+
+export const CHART_TYPE = {
+    'CandleStick' : 1
 }

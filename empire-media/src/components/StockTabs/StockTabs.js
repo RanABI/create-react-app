@@ -18,10 +18,10 @@ export default function StockTabs({props}) {
     return (<StockTabsStyled>
         <Tabs defaultIndex={3}>
             <TabList>
-                <Tab onClick={() => handleClick(config.PERIODS.Minute, config.PRECISION.Minutes)}>1M</Tab>
-                <Tab onClick={() => handleClick(config.PERIODS.Five_Minutes, config.PRECISION.Minutes)}>5M</Tab>
-                <Tab onClick={() => handleClick(config.PERIODS.One_Hour, config.PRECISION.Hours)}>1H</Tab>
-                <Tab onClick={() => handleClick(config.PERIODS.One_Week, config.PRECISION.Hours)}>1W</Tab>
+                <Tab onClick={() => handleClick(config.PERIOD.Minute, config.PRECISION.Minutes)}>1M</Tab>
+                <Tab onClick={() => handleClick(config.PERIOD.Five_Minutes, config.PRECISION.Minutes)}>5M</Tab>
+                <Tab onClick={() => handleClick(config.PERIOD.One_Hour, config.PRECISION.Hours)}>1H</Tab>
+                <Tab onClick={() => handleClick(config.PERIOD.One_Week, config.PRECISION.Hours)}>1W</Tab>
             </TabList>
 
             <TabPanel >

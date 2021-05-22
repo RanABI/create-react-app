@@ -8,7 +8,7 @@ export default function Stock(stockType) {
 
     const [stockData, setStockData] = useState([]);
     const [precision, setPrecision] = useState(config.PRECISION.Hours);
-    const [period, setPeriod] = useState(config.PERIODS.One_Week);
+    const [period, setPeriod] = useState(config.PERIOD.One_Week);
     
     const onFailure = (error) => {
         console.log('error',error);
@@ -22,8 +22,7 @@ export default function Stock(stockType) {
             onFailure: onFailure
         } );
     }, [period,precision,stockType]);
-
-    const data = {stockData, precision };
+    const data = {stockData, precision,'chartType': config.CHART_TYPE.CandleStick };
     return ( 
         <StockStyled>
             <StockTabs props={{setPeriod, setPrecision}}/>
