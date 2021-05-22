@@ -4,15 +4,16 @@ import StockStyled from './StockStyled';
 import StockChart from '../StockChart/StockChart';
 import StockTabs from '../StockTabs/StockTabs';
 import * as config from '../../config/config'
-export default function Stock(stockType) {
 
+export default function Stock(stockType) {
     const [stockData, setStockData] = useState([]);
     const [precision, setPrecision] = useState(config.PRECISION.Hours);
     const [period, setPeriod] = useState(config.PERIOD.One_Week);
     
-    const onFailure = (error) => {
-        console.log('error',error);
+    const onFailure = (_) => {
+        setStockData([]);
     }
+    
     useEffect(() => {
         getStockData({
             stockType: stockType,
@@ -22,6 +23,7 @@ export default function Stock(stockType) {
             onFailure: onFailure
         } );
     }, [period,precision,stockType]);
+
     const data = {stockData, precision,'chartType': config.CHART_TYPE.CandleStick };
     return ( 
         <StockStyled>
